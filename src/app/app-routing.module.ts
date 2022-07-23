@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { RoutePaths } from '@core/enums';
+
+const routes: Routes = [
+  {
+    path: RoutePaths.Login,
+    loadChildren: () => {
+      return import('./modules/routed/login/login.module').then(
+        (m) => m.LoginModule
+      );
+    },
+  },
+  { path: '**', redirectTo: `/${RoutePaths.Login}` },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

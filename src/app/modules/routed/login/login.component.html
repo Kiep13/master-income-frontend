@@ -1,0 +1,21 @@
+<section class='login-page'>
+  <span class='tui-text_h3'>Login</span>
+  <form class='login-page__form' [formGroup]='form'>
+    <tui-input formControlName='email'>
+      Email
+      <input tuiTextfield type='email'/>
+    </tui-input>
+
+    <tui-input-password formControlName='password'>Password</tui-input-password>
+
+    <button
+      tuiButton
+      type='submit'
+      [showLoader]='false'
+    >
+      Sign in
+    </button>
+
+    <app-google-login-button></app-google-login-button>
+  </form>
+</section>
