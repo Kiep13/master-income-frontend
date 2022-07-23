@@ -1,0 +1,31 @@
+<section class='sign-up-page'>
+  <span class='tui-text_h3'>Sign Up</span>
+  <form class='sign-up-page__form' [formGroup]='form'>
+    <tui-input formControlName='name'>
+      Name
+      <input tuiTextfield/>
+    </tui-input>
+
+    <tui-input formControlName='surname'>
+      Surname
+      <input tuiTextfield/>
+    </tui-input>
+
+    <tui-input formControlName='email'>
+      Email
+      <input tuiTextfield type='email'/>
+    </tui-input>
+
+    <tui-input-password formControlName='password'>Password</tui-input-password>
+
+    <button
+      tuiButton
+      type='submit'
+      [showLoader]='false'
+    >
+      Sign up
+    </button>
+
+    <a tuiLink class='sign-up-page__link' [routerLink]='[routes.Base, routes.Login]'>Already have an account? Login</a>
+  </form>
+</section>

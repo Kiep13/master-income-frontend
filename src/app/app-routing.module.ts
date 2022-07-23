@@ -12,6 +12,14 @@ const routes: Routes = [
       );
     },
   },
+  {
+    path: RoutePaths.SignUp,
+    loadChildren: () => {
+      return import('./modules/routed/sign-up/sign-up.module').then(
+        (m) => m.SignUpModule
+      );
+    },
+  },
   { path: '**', redirectTo: `/${RoutePaths.Login}` },
 ];
 
